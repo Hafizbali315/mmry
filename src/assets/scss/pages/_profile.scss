@@ -1,0 +1,66 @@
+@import '../abstracts/mixins';
+
+.profile-banner {
+    height: 100vh;
+    min-height: 450px;
+    background: url('../../images/stunning-curly-female-model-jumping-purple-indoor-portrait-slim-girl-bright-yellow-dress.png') no-repeat center center/cover;
+}
+
+.profile-info-full {
+    .profile-info-card {
+        margin-top: -250px;
+        border-radius: 20px;
+        padding: 0 15px;
+        .profile-info {
+            text-align: center;
+            @media(min-width: 992px){
+                max-width: 80%;
+                margin: auto;
+            }
+
+            .user-avatar {
+                img {
+                    width: 160px;
+                    height: 160px;
+                    border: 7px solid $color-white;
+                    border-radius: 50%;
+                    display: block;
+                    margin: -80px auto 0 auto;
+                }
+            }
+            .user-name {
+                @include font-style(50px, rgba($color-black, 1), 500);
+                margin: 20px 0 10px 0;
+
+                @media (max-width: 767px){
+                    @include font-style(40px, rgba($color-black, 1), 500);
+                }
+            }
+            .user-description {
+                @include font-style(17px, rgba($color-black, 0.5), 500);
+            }
+        }
+    }
+}
+
+
+// ######## dark mode #######
+.dark-mode {
+    .profile-info-full {
+        .profile-info-card {
+            background-color: #272737;
+            .profile-info {
+                .user-name {
+                    @include font-style(50px, rgba($color-white, 1), 500);
+
+                    @media (max-width: 767px){
+                        @include font-style(40px, rgba($color-white, 1), 500);
+                    }
+                }
+                .user-description {
+                    @include font-style(17px, rgba($color-white, 0.5), 500);
+                }
+            }
+        }
+    }
+}
